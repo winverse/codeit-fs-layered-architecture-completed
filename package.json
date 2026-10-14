@@ -1,0 +1,55 @@
+{
+  "name": "codeit-fs-layered-architecture-completed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/main.js",
+  "type": "module",
+  "imports": {
+    "#config": "./src/config/config.js",
+    "#prisma/*": "./src/prisma/*",
+    "#repositories": "./src/repositories/index.js",
+    "#constants": "./src/common/constants/index.js",
+    "#exceptions": "./src/common/exceptions/index.js",
+    "#controllers": "./src/controllers/index.js",
+    "#services": "./src/services/index.js",
+    "#middlewares": "./src/middlewares/index.js",
+    "#providers": "./src/providers/index.js"
+  },
+  "scripts": {
+    "dev": "nodemon --env-file=./env/.env.development ./src/main.js",
+    "prod": "node --env-file=./env/.env.production src/main.js",
+    "prisma:emit": "dotenv -e ./env/.env.development -- prisma contract emit",
+    "prisma:init": "dotenv -e ./env/.env.development -- prisma db init",
+    "prisma:update": "dotenv -e ./env/.env.development -- prisma db update",
+    "seed": "node --env-file=./env/.env.development ./scripts/seed.js",
+    "verify:api": "node --env-file=./env/.env.development ./scripts/verify-api.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@prisma/orm-postgres": "8.0.0-rc.17",
+    "awilix": "^13.0.5",
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@faker-js/faker": "^10.6.0",
+    "@types/node": "^26.6.5",
+    "dotenv-cli": "^11.0.0",
+    "eslint": "^10.12.0",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.9.10",
+    "prisma": "8.0.0-rc.22"
+  }
+}
