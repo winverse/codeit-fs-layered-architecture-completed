@@ -1,7 +1,12 @@
-import { HTTP_STATUS } from '#constants';
+import { ERROR_MESSAGE } from '#constants';
+import { UnauthorizedException } from '#exceptions';
 
-const createAuthorizationMiddleware = (predicate) => (req, res, next) =>
-  predicate(req) ? next() : res.sendStatus(HTTP_STATUS.UNAUTHORIZED);
+const createAuthorizationMiddleware = (predicate) => (req, res, next) => {
+  if (!predicate(req)) {
+    throw new UnauthorizedException(ERROR_MESSAGE.UNAUTHORIZED);
+  }
+  next();
+};
 
 const hasLoginUser = (req) => Boolean(req.user);
 
