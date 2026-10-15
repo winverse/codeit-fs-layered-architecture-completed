@@ -1,6 +1,6 @@
-# Layered Architecture 마이그레이션 Completed
+# Layered Architecture Completed
 
-이 프로젝트는 `Layered Architecture 마이그레이션` 교재를 시작 코드에서 끝까지 따라 만든 최종 상태입니다. 라우터 안에 함께 있던 HTTP 처리, 비즈니스 규칙, 데이터 접근, 외부 라이브러리 연동 코드를 `src/controllers/`(Controller), `src/services/`(Service), `src/repositories/`(Repository), `src/providers/`(Provider)로 나눴습니다. 객체를 만들고 연결하는 일은 `src/common/di/container.js`의 Awilix 컨테이너가 맡고, Express 앱 구성은 `src/app.js`의 `App` 클래스가, 서버 시작은 `src/main.js`의 `bootstrap()`이 맡습니다.
+이 프로젝트는 `Layered Architecture` 교재를 시작 코드에서 끝까지 따라 만든 최종 상태입니다. 라우터 안에 함께 있던 HTTP 처리, 비즈니스 규칙, 데이터 접근, 외부 라이브러리 연동 코드를 `src/controllers/`(Controller), `src/services/`(Service), `src/repositories/`(Repository), `src/providers/`(Provider)로 나눴습니다. 객체를 만들고 연결하는 일은 `src/common/di/container.js`의 Awilix 컨테이너가 맡고, Express 앱 구성은 `src/app.js`의 `App` 클래스가, 서버 시작은 `src/main.js`의 `bootstrap()`이 맡습니다.
 
 ## 최종 구조
 
