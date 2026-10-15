@@ -31,8 +31,8 @@ export class UserService {
     });
   }
 
-  async changeProfile(userId, reqUserId, { email, name }) {
-    if (reqUserId !== userId) {
+  async changeProfile(userId, loggedInUserId, { email, name }) {
+    if (loggedInUserId !== userId) {
       throw new ForbiddenException(ERROR_MESSAGE.FORBIDDEN);
     }
 
@@ -47,8 +47,8 @@ export class UserService {
     });
   }
 
-  async deleteAccount(userId, reqUserId) {
-    if (reqUserId !== userId) {
+  async deleteAccount(userId, loggedInUserId) {
+    if (loggedInUserId !== userId) {
       throw new ForbiddenException(ERROR_MESSAGE.FORBIDDEN);
     }
 
