@@ -5,7 +5,7 @@ import {
   createUserSchema,
   userIdParamSchema,
   updateUserSchema,
-} from './dto/user-dto.js';
+} from './dto/user.dto.js';
 
 export class UserController extends BaseController {
   #userService;

@@ -1,7 +1,7 @@
-import { BaseController } from './base-controller.js';
+import { BaseController } from './base.controller.js';
 import { HTTP_STATUS } from '#constants';
 
-export * from './base-controller.js';
+export * from './base.controller.js';
 export * from './auth/index.js';
 export * from './user/index.js';
 
